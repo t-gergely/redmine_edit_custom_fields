@@ -27,6 +27,8 @@ class EditCustomFieldsSettingsController < ApplicationController
   before_filter :authorize
   before_filter :find_custom_field
 
+  helper :custom_fields
+
   def update
     if @custom_field.update_attributes params[:custom_field]
       flash[:notice] = l :notice_successful_update
